@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mywebsite</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Courier New', monospace;
+      background: black;
+      color: #00ffcc;
+      overflow-x: hidden;
+    }
+    header {
+      padding: 20px;
+      text-align: center;
+      background: rgba(0,0,0,0.8);
+      font-size: 32px;
+      font-weight: bold;
+      border-bottom: 1px solid #00ffcc;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 20px 0;
+    }
+    nav a {
+      color: #00ffcc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      margin-top: 20px;
+      color: black;
+      background: #00ffcc;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .bg-animate {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: repeating-linear-gradient(45deg, #00ffcc 0px, #00ffcc 1px, black 1px, black 20px);
+      opacity: 0.02;
+      z-index: -1;
+      animation: move 20s linear infinite;
+    }
+    @keyframes move {
+      from { background-position: 0 0; }
+      to { background-position: 1000px 1000px; }
+    }
+    .audio-control {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #00ffcc;
+      color: black;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-animate"></div>
+  <header>mywebsite</header>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#script">Script Gratis</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
+
+  <section id="home">
+    <h1>Selamat datang di mywebsite</h1>
+    <p>Website berbagi script bot gratis untuk kalian semua 💻</p>
+  </section>
+
+  <section id="script">
+    <h2>Script Bot Gratis</h2>
+    <p>Download script bot Telegram, WhatsApp, dan lainnya di sini 👇</p>
+    <a class="btn" href="https://www.mediafire.com/file/1qixnnn5qkpfsd4/Alya_Kujou_-_Ai.zip/file" target="_blank">Alya MD</a>
+    <a class="btn" href="https://www.mediafire.com/file/j8wdz9rigc8acd2/ASUNA_BY_YOIMIYA.zip/file" target="_blank">Asuna Assistent</a>
+    <a class="btn" href="https://www.mediafire.com/file/y9pxpqkl5z7t996/%25E1%25B4%2580%25E1%25B4%258B%25E1%25B4%2580%25E1%25B4%258D%25E1%25B4%2587_%25E1%25B4%258D%25E1%25B4%2585_%25E1%25B4%25A01.4.zip/file" target="_blank">Akame MD</a>
+    <a class="btn" href="https://www.mediafire.com/file/nuhk0tv5xanpsh0/Base_Cataly_Simple_Bot_V1_%25282%2529.zip/file" target="_blank">Cataly Simple Bot Push</a>
+    <a class="btn" href="https://www.mediafire.com/file/xvozeb7b1s5ijk6/SC_NINE_ASSISTANT.zip/file
+" target="_blank">Nine Assistent</a>
+  </section>
+
+  <section id="kontak">
+    <h2>Kontak Saya</h2>
+    <p>WhatsApp: https://wa.me/6287745429117</p>
+    <p>telegram: https://t.me/ZeroneOfficial</p>
+  </section>
+
+  <!-- Backsound -->
+  <audio id="bg-music" autoplay loop>
+    <source src="https://files.catbox.moe/ubhpu3.mp3" type="audio/mpeg">
+    Browser kamu tidak support audio 😢
+  </audio>
+  <button class="audio-control" onclick="toggleAudio()">🔊</button>
+
+  <script>
+    let music = document.getElementById("bg-music");
+    let isPlaying = true;
+    function toggleAudio() {
+      if (isPlaying) {
+        music.pause();
+        event.target.textContent = "🔇";
+      } else {
+        music.play();
+        event.target.textContent = "🔊";
+      }
+      isPlaying = !isPlaying;
+    }
+  </script>
+</body>
+</html>
